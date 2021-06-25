@@ -7,12 +7,14 @@ export default class SupportCommand implements Command {
     aliases;
     permissions;
     client;
+    devOnly;
     
     constructor(client: Client) {
         this.name = "support";
         this.aliases = ["soporte", "server"];
         this.permissions = [];
         this.client = client;
+        this.devOnly = false;
     }
     
     run(message: Message): void {

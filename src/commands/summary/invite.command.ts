@@ -7,12 +7,14 @@ export default class InviteCommand implements Command {
     aliases;
     permissions;
     client;
+    devOnly;
 
     constructor(client: Client) {
         this.name = "invite"
         this.aliases = [];
         this.permissions = [];
         this.client = client;
+        this.devOnly = false;
     }
 
     run(message): void {

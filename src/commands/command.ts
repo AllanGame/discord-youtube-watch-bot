@@ -5,6 +5,7 @@ export default interface Command {
     aliases: string[];
     permissions: string[];
     client: Client;
+    devOnly: Boolean
 
     run(message: Message):void;
 }

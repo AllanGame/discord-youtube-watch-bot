@@ -7,12 +7,14 @@ export default class HelpCommand implements Command {
     aliases;
     permissions;
     client;
+    devOnly;
 
     constructor(client: Client) {
         this.name = "help";
         this.aliases = ["ayuda", "commands", "comandos", "faq"];
         this.permissions = [];
         this.client = client;
+        this.devOnly = false;
     }
 
     run(message) {

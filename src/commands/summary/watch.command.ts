@@ -8,12 +8,14 @@ export default class WatchCommand implements Command {
     aliases;
     permissions;
     client;
+    devOnly;
 
     constructor(client: Client) {
         this.name = "watch";
         this.aliases = ["view", "youtube"];
         this.permissions = [];
         this.client = client;
+        this.devOnly = false;
     }
 
     run(message): void {

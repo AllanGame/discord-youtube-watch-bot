@@ -55,7 +55,9 @@ client.on('message', (message) => {
     if(!command) {
         return;
     } 
-
+    if(command.devOnly && 
+        !config.developers
+        .includes(message.author.id)) return; 
     command.run(message);
 
 })
