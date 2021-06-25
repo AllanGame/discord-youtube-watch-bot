@@ -8,6 +8,7 @@ import * as config from '../config.json';
 import Command from "./commands/command";
 import InviteCommand from "./commands/summary/invite.command";
 import WatchCommand from "./commands/summary/watch.command";
+import helpEmbed from "./embeds/help.embed";
 
 
 client.login(process.env.TOKEN)
@@ -30,6 +31,10 @@ client.on('ready', () => {
 client.on('message', (message) => {
     if(message.author.bot || !message.guild) {
         return;
+    }
+
+    if(message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))) {
+        message.channel.send(helpEmbed);
     }
 
     if (message.content.indexOf(config.prefix) !== 0) {
