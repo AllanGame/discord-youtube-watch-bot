@@ -44,7 +44,6 @@ export default class WatchCommand implements Command {
             })
             .then(res => res.json())
             .then(invite => {
-                console.log(invite)
                 if(invite.error || !invite.code) {
                     message.channel.send("An error has ocurred, try this command later or contact a bot developer to get help.");
                     return;
