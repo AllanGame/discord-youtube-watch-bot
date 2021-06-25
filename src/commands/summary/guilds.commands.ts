@@ -1,7 +1,7 @@
 import { Client } from "discord.js";
 import Command from "../command";
 
-export default class UsersCommand implements Command {
+export default class GuildsCommand implements Command {
     name;
     aliases;
     permissions;
@@ -9,7 +9,7 @@ export default class UsersCommand implements Command {
     devOnly;
 
     constructor(client: Client) {
-        this.name = "users";
+        this.name = "guilds";
         this.aliases = [];
         this.permissions = [];
         this.client = client;
@@ -17,7 +17,7 @@ export default class UsersCommand implements Command {
     }
 
     run(message) {
-        message.channel.send(`I currently have ${this.client.users.cache.size} users in cache`)        
+        message.channel.send(`I currently have ${this.client.guilds.cache.size} guilds in cache`)        
     }
 
 }
