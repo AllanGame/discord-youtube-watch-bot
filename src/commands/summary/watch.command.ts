@@ -49,6 +49,13 @@ export default class WatchCommand implements Command {
                     return;
                 }
         
+                if(invite.code == 50013) {
+                    message.channel.send(new MessageEmbed()
+                    .setTitle("Something went wrong.")
+                    .setDescription("I don't have permissions to create an invite, please contact an administrator."))
+                    return;
+                }
+
                 message.channel.send(new MessageEmbed()
                 .setTitle("Done!")
                 .setDescription(`Click [here to view](https://discord.gg/${invite.code}) \n if you want to share this with a friend use this invite: https://discord.gg/${invite.code}`));
