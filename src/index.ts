@@ -9,6 +9,7 @@ import Command from "./commands/command";
 import HelpCommand from "./commands/summary/help.command";
 import InviteCommand from "./commands/summary/invite.command";
 import SupportCommand from "./commands/summary/support.command";
+import UsersCommand from "./commands/summary/users.commands";
 import WatchCommand from "./commands/summary/watch.command";
 import helpEmbed from "./embeds/help.embed";
 
@@ -29,6 +30,7 @@ client.on('ready', () => {
         new InviteCommand(client),
         new HelpCommand(client),
         new SupportCommand(client),
+        new UsersCommand(client),
     ]
     
     commands.forEach(command => {
