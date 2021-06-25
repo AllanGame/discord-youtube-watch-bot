@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --project ./",
     "prestart": "npm run build",
-    "start": "node build/index.js"
+    "start": "node build/src/index.js"
   },
   "keywords": [],
   "author": "",
