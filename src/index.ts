@@ -2,7 +2,7 @@ import { Client, GuildChannel, MessageEmbed } from "discord.js";
 const client = new Client();
 
 import * as dotenv from "dotenv";
-dotenv.config({ path: __dirname+'/.env' });
+dotenv.config();
 
 import * as config from '../config.json';
 import Command from "./commands/command";
