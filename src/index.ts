@@ -6,6 +6,7 @@ dotenv.config({ path: __dirname+'/.env' });
 
 import * as config from '../config.json';
 import Command from "./commands/command";
+import HelpCommand from "./commands/summary/help.command";
 import InviteCommand from "./commands/summary/invite.command";
 import WatchCommand from "./commands/summary/watch.command";
 import helpEmbed from "./embeds/help.embed";
@@ -21,6 +22,7 @@ client.on('ready', () => {
     const commands: Command[] = [
         new WatchCommand(client),
         new InviteCommand(client),
+        new HelpCommand(client)
     ]
     
     commands.forEach(command => {
