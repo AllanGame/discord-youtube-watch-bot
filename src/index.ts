@@ -16,6 +16,10 @@ client.login(process.env.TOKEN)
 
 client.on('ready', () => {
     console.log("logged in as " + client.user.tag);
+    client.user.setActivity({
+        type: "WATCHING",
+        name: "YouTube | Ping me!"
+    })
 })
     // register commands
     const commandRegistry: Map<String, Command> = new Map();
