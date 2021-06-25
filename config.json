@@ -1,5 +1,6 @@
 {
     "prefix": "y!",
     "invite": "https://discord.com/api/oauth2/authorize?client_id=857419722974822411&permissions=3477073&scope=bot",
-    "YOUTUBE_TOGETHER_APPLICATION": "755600276941176913"
+    "YOUTUBE_TOGETHER_APPLICATION": "755600276941176913",
+    "support_server_invite": "https://discord.gg/pHNfyBvAMZ"
 }
