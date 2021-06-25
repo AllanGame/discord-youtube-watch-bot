@@ -1,9 +1,9 @@
 import { Client, GuildChannel, Message, MessageEmbed } from "discord.js";
 import * as config from '../../../config.json';
 import fetch from "node-fetch";
-import command from "../command";
+import Command from "../command";
 
-export default class WatchCommand implements command {
+export default class WatchCommand implements Command {
     name;
     aliases;
     permissions;

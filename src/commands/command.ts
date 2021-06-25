@@ -1,6 +1,6 @@
 import { Client, Message } from "discord.js";
 
-export default interface command {
+export default interface Command {
     name: string;
     aliases: string[];
     permissions: string[];

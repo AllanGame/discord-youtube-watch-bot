@@ -5,21 +5,27 @@ import * as dotenv from "dotenv";
 dotenv.config({ path: __dirname+'/.env' });
 
 import * as config from '../config.json';
-import command from "./commands/command";
+import Command from "./commands/command";
+import InviteCommand from "./commands/summary/invite.command";
 import WatchCommand from "./commands/summary/watch.command";
 
 
 client.login(process.env.TOKEN)
 
-const commandRegistry: Map<String, command> = new Map();
-const commands: command[] = [
-    new WatchCommand(client),
-]
-
-commands.forEach(command => {
-    commandRegistry.set(command.name, command);
-    console.log(`Registering command ${command.name}`)
+client.on('ready', () => {
+    console.log("logged in as " + client.user.tag);
 })
+    // register commands
+    const commandRegistry: Map<String, Command> = new Map();
+    const commands: Command[] = [
+        new WatchCommand(client),
+        new InviteCommand(client),
+    ]
+    
+    commands.forEach(command => {
+        commandRegistry.set(command.name, command);
+        console.log(`Registering command ${command.name}`)
+    })
 
 client.on('message', (message) => {
     if(message.author.bot || !message.guild) {
