@@ -1,0 +1,12 @@
+# editor files
+.idea
+*.iml
+
+# application secrets
+.env
+
+# node packages
+/node_modules/
+
+# output files
+/build/
