@@ -1,6 +1,7 @@
 # editor files
 .idea
 *.iml
+.replit
 
 # application secrets
 .env
